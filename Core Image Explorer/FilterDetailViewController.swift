@@ -50,9 +50,13 @@ class FilterDetailViewController: UIViewController, UINavigationControllerDelega
             // strip "input" from the start of the parameter name to make it more presentation-friendly
             let displayName =  inputName
             //inputName[inputName.startIndex.advancedBy(5)..<inputName.endIndex]
-            let minValue = attribute[kCIAttributeSliderMin] as! Float
-            let maxValue = attribute[kCIAttributeSliderMax] as! Float
-            let defaultValue = attribute[kCIAttributeDefault] as! Float
+            
+            print("outputKeys" + filter.outputKeys.joined(separator: "-"))
+            print("inputKeys" + filter.inputKeys.joined(separator: "-"))
+            
+            let minValue = attribute[kCIAttributeSliderMin] as? Float ?? 0.0
+            let maxValue = attribute[kCIAttributeSliderMax] as? Float ?? 0.0
+            let defaultValue = attribute[kCIAttributeDefault] as? Float ?? 0.0
 
             return ScalarFilterParameter(name: displayName, key: inputName,
                                          minimumValue: minValue, maximumValue: maxValue, currentValue: defaultValue)

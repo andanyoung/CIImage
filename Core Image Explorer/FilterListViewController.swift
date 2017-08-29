@@ -9,7 +9,7 @@
 import UIKit
 
 class FilterListViewController: UITableViewController {
-    let filters: [(filterName: String, filterDisplayName: String)] = [
+    var filters: [(filterName: String, filterDisplayName: String)] = [
         ("CIBloom", "Bloom"),
         ("CIColorControls", "Color Controls"),
         ("CIColorInvert", "Color Invert"),
@@ -30,8 +30,26 @@ class FilterListViewController: UITableViewController {
         ("CIVibrance", "Vibrance"),
         ("CIVignette", "Vignette")
     ]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+//        let filterNames = CIFilter.filterNames(inCategory: kCICategoryBuiltIn)  as [String]
+//        filters = [(filterName: String, filterDisplayName: String)]()
+//        filterNames.forEach {
+//            
+//            let name = $0.subString(start: 2, length: $0.characters.count - 2)
+////            name.characters.forEach{
+////                
+////            }
+//            filters.append((filterName: $0, filterDisplayName: name))
+//        }
+        
+    }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         UIApplication.shared.setStatusBarStyle(.default, animated: animated)
         navigationController?.navigationBar.barStyle = .default
         tabBarController?.tabBar.barStyle = .default

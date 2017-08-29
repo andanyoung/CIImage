@@ -57,7 +57,7 @@ class LabeledSliderView: UIView {
 
     func addLayoutConstraints() {
         addConstraint(NSLayoutConstraint(item: slider, attribute: .width, relatedBy: .equal,
-            toItem: self, attribute: .width, multiplier: 1, constant: -50))
+            toItem: self, attribute: .width, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: slider, attribute: .height, relatedBy: .equal,
             toItem: self, attribute: .height, multiplier: 0.5, constant: 0))
         addConstraint(NSLayoutConstraint(item: slider, attribute: .bottom, relatedBy: .equal,

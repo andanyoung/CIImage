@@ -45,7 +45,7 @@ class FilteredImageView: GLKView, ParameterAdjustmentDelegate {
         if ciContext != nil && inputImage != nil && filter != nil {
             let inputCIImage = CIImage(image: inputImage)
             filter.setValue(inputCIImage, forKey: kCIInputImageKey)
-            if let outputImage = filter.outputImage {
+            if filter.outputImage != nil {
                 clearBackground()
 
                 let inputBounds = inputCIImage!.extent

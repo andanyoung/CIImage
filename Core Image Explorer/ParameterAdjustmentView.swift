@@ -43,7 +43,7 @@ class ParameterAdjustmentView: UIView {
         var yOffset: CGFloat = kSliderMarginY
         for param in parameters {
 
-            let frame = CGRect(x: 0, y: yOffset, width: UIScreen.main.bounds.width - 20, height: kSliderHeight)
+            let frame = CGRect(x: 0, y: yOffset, width: UIScreen.main.bounds.width, height: kSliderHeight)
 
             let sliderView = LabeledSliderView(frame: frame, parameter: param)
             sliderView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +56,7 @@ class ParameterAdjustmentView: UIView {
             addConstraint(NSLayoutConstraint(item: sliderView, attribute: .top, relatedBy: .equal,
                                              toItem: self, attribute: .top, multiplier: 1, constant: yOffset))
             addConstraint(NSLayoutConstraint(item: sliderView, attribute: .width, relatedBy: .equal,
-                                             toItem: self, attribute: .width, multiplier: 1, constant: -kSliderMarginX * 4))
+                                             toItem: self, attribute: .width, multiplier: 1, constant: -kSliderMarginX * 2))
             addConstraint(NSLayoutConstraint(item: sliderView, attribute: .height, relatedBy: .equal,
                                              toItem: self, attribute: .height, multiplier: 0, constant: kSliderHeight))
 
