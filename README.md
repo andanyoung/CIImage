@@ -4,10 +4,9 @@
 
 <img src="./screenshots/IMG_0018.PNG" width = "50%" /><img src="./screenshots/IMG_0019.PNG" width = "50%" /><img src="./screenshots/IMG_0020.PNG" width = "50%" />
 
+>
 
-
-
-
+---
 ##基本概念
 
 说到 Core Image，我们首先需要介绍几个基本的概念。
